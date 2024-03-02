@@ -1,0 +1,97 @@
+header{
+
+  padding:50px;font-size: 100px; background-color: #2B7A78 ;color:white;text-align: justify;
+  vertical-align: middle; text-align: center;font-family: 'Montserrat',serif;margin: 0px;}
+
+.haut{height: 100%; background-color: #2B7A78; width: 130%;}
+
+nav{background-color: #2B7A78; float:inline-end  ;}
+
+.icone{float:left}
+
+h1{padding: 20px; font-size: 75px;font-family:'Times New Roman', Times, serif;text-align:
+   center;border: 3px black solid;border-radius: 40px;}
+
+select{font-size: 30px;color: aliceblue;border: 3px hwb(199, 64%, 12%) solid;
+    ;background-color:#17252A;margin-left: 10px; margin-right:10px;
+     padding-top: 2px; padding-bottom: 5px; justify-items: right;border-color: black;float:right;}
+
+
+.exemple-recherche{border:3px;border-color: aliceblue;}
+
+body{background-color:#DEF2F1; margin: 0%;display: flex;flex-wrap: wrap;}
+
+h2{font-size:50px;padding-left: 20px;}
+
+pre{font-size: 20.8px;}
+
+a:hover{
+  color: deeppink;text-decoration: underline;
+}
+a{text-decoration: none;color:black; font-size: 50px; }
+
+.a-propos-accueil{text-align: justify;font-size: 30px;margin-left: 40px;margin-right: 40px;}
+
+.imgmacro{width: 450px;height: 400px; object-fit: cover;object-position: bottom right;border-radius: 50px;margin: 20px}
+
+.imgpaysage{width: 900px; height: 400px; object-fit: cover; border-radius:50px;margin: 20px}
+
+.imgdessinac{height: 600px;object-fit: cover; border-radius: 50px; margin: 20px;}
+
+.videopongac{border-radius: 50px;margin:20px;}
+
+a{margin-left: 20px;}
+
+.programme{color:rgb(250, 197, 52);background-color: rgb(45,48,44);}
+
+.import{color:rgb(52,115,250)}
+
+.prog{color:rgb(40,160,10)}
+
+.présentation-programme{font-size: 30px;margin:30px}
+
+.a-propos-gras{text-align: justify;font-size: 30px;margin-left: 40px;margin-right: 40px;color: darkorchid;}
+
+.reste{text-align: justify;font-size: 30px;margin-left: 40px;margin-right: 40px}
+
+footer{background-color: #DEF2F1;}
+
+.lienbas{float: left;}
+
+
+.montagneneige{height: 400px;width: 700px; object-fit: cover;object-position:top; border-radius: 50px;margin:20px}
+
+.paysage{height:400px; width:700px;object-fit: cover;border-radius: 50px; margin:20px}
+
+.montagnelac{height:400px;width:700px;object-fit: cover; border-radius: 50px; margin:20px}
+
+.couchésoleil{height:400px;width:700px;object-fit: cover; border-radius: 50px; margin:20px}
+
+.treignac{height:400px;width:700px;object-fit: cover; border-radius: 50px; margin:20px}
+
+.plagebretagne{height:400px;width:700px;object-fit: cover; border-radius: 50px; margin:20px}
+
+.portebretagne{height:400px;width:700px;object-fit: cover; border-radius: 50px; margin:20px; object-position: top;}
+
+
+.fleursalon{height: 500px; width: 500px; object-fit: cover; border-radius: 50px; margin:20px;}
+
+.fleursalon2{height: 500px; width: 500px; object-fit: cover; border-radius: 50px; margin:20px;}
+
+.parc{height: 500px; width: 500px; object-fit: cover; border-radius: 50px; margin:20px;}
+
+.jonquille{height: 500px; width: 500px; object-fit: cover; border-radius: 50px; margin:20px;}
+
+.lac{height: 500px; width: 500px; object-fit: cover; border-radius: 50px; margin:20px;}
+
+.journal{height: 500px; width: 500px; object-fit: cover; border-radius: 50px; margin:20px;}
+
+.dessert{height: 500px; width: 600px; object-fit: cover; border-radius: 50px; margin:20px;}
+
+.caché{opacity:0}
+
+.logoescalade{border-radius: 50px;margin:20px}
+
+.perso{border-radius: 50px;margin:20px}
+
+.aigle{border-radius: 50px;margin:20px  }

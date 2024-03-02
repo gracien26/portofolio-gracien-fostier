@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<hmtl lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>programmation GRACIEN FOSTIER </title>
+        <link rel="stylesheet" href="style-css-gracien.css" />
+        <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header >
+
+            <div class="icone"> <img src="icone/programation.png"></div>GRACIEN FOSTIER
+
+
+        </header>
+        <nav>
+            <select name="liens" onchange="window.location.href=this.value">
+                <option value="" class="exemple-recherche">--que recherhcez-vous?--</option>
+                <option value="index.html">accueil</option>
+                <option value="a-propos-site-1.html">à propos de moi</option>
+                <option value="mes-photos.html">mes photos</option>
+                <option value="mes-dessins.html">mes dessins</option>
+                <option value="programation-classique.html">programation</option>
+            </select>
+        </nav>
+        
+        <h1>programation</h1>
+        <br>
+        <select name="liens" onchange="window.location.href=this.value">
+
+            <option value="programation-classique.html">pong version 1</option>
+            <option value="programation-vitesse.html">pong version 2</option>
+
+        </select>
+        <h2>pong version 1</h2>
+        <br>
+        <p class="présentation-programme">j'ai choisit de vous présenter le jeu pong car c'est un jeu arcade que j'aime bien et que j'ai particulièrement apprécier codé. 
+            voici une petite vidéo du jeu en train dêtre joué:
+            <video class="videopongac" controls="controls" autoplay muted loop><source src="programation/pong.mp4"><source src="programation/pong.ogg"> si vous ne parvenez pas à lire cet vidéo mettez votre navigateur à jour puis réessayer</video>
+            <br>
+            ainsi que le code m'ayant permis de refaire ce jeu:        
+        </p>
+        </a></h2>
+          <pre class="programme">
+            <div class="import">
+            import pygame
+            import random </div>
+            <div class="prog">
+            # Initialisation de Pygame</div>
+            pygame.init()
+            <div class="prog">
+            # Paramètres de l'écran</div>
+            WIDTH, HEIGHT = 800, 600
+            BG_COLOR = (0, 0, 0)
+            WHITE = (255, 255, 255)
+            <div class="prog">
+            # Paramètres de la raquette</div>
+            PADDLE_WIDTH, PADDLE_HEIGHT = 10, 100
+            PADDLE_SPEED = 5
+            <div class="prog">
+            # Paramètres de la balle</div>
+            BALL_SIZE = 10
+            BALL_SPEED_X = 5
+            BALL_SPEED_Y = 5
+            <div class="#prog">
+            # Paramètres du score</div>
+            FONT_SIZE = 36
+            <div class="prog">
+            # Création de l'écran</div>
+            screen = pygame.display.set_mode((WIDTH, HEIGHT))
+            pygame.display.set_caption("Pong")
+            font = pygame.font.SysFont(None, FONT_SIZE)
+            <div class="prog">
+            # Fonction pour dessiner les raquettes</div>
+            def draw_paddle(paddle):
+                pygame.draw.rect(screen, WHITE, paddle)
+            <div class="prog">
+            # Fonction pour dessiner la balle</div>
+            def draw_ball(ball):
+                pygame.draw.rect(screen, WHITE, ball)
+          </pre>
+          <pre>
+            <div class="prog">
+            # Fonction pour dessiner le score</div>
+            def draw_score(score1, score2):
+                score1_text = font.render("Player 1: " + str(score1), True, WHITE)
+                score2_text = font.render("Player 2: " + str(score2), True, WHITE)
+                screen.blit(score1_text, (20, 20))
+                screen.blit(score2_text, (WIDTH - 20 - score2_text.get_width(), 20))
+            <div class="prog">
+            # Fonction principale du jeu</div>
+            def pong_game():
+                <div class="prog">
+                # Initialisation des raquettes</div>
+                player1_paddle = pygame.Rect(50, HEIGHT // 2 - PADDLE_HEIGHT // 2, PADDLE_WIDTH, PADDLE_HEIGHT)
+                player2_paddle = pygame.Rect(WIDTH - 50 - PADDLE_WIDTH, HEIGHT // 2 - PADDLE_HEIGHT // 2, PADDLE_WIDTH, PADDLE_HEIGHT)
+                <div class="prog">
+                # Initialisation de la balle</div>
+                ball = pygame.Rect(WIDTH // 2 - BALL_SIZE // 2, HEIGHT // 2 - BALL_SIZE // 2, BALL_SIZE, BALL_SIZE)
+                ball_speed_x = BALL_SPEED_X * random.choice((1, -1))
+                ball_speed_y = BALL_SPEED_Y * random.choice((1, -1))
+                <div class="prog">
+                # Scores initiaux</div>
+                player1_score = 0
+                player2_score = 0
+                <div class="prog">
+                # Boucle de jeu</div>
+                while True:
+                    for event in pygame.event.get():
+                        if event.type == pygame.QUIT:
+                            pygame.quit()
+                            quit()
+                    <div class="prog">
+                    # Contrôles de la raquette du joueur 1</div>
+                    keys = pygame.key.get_pressed()
+                    if keys[pygame.K_z] and player1_paddle.top > 0:
+                        player1_paddle.y -= PADDLE_SPEED
+                    if keys[pygame.K_s] and player1_paddle.bottom < HEIGHT:
+                        player1_paddle.y += PADDLE_SPEED
+          </pre>
+          <pre>
+                        <div class="prog">
+                    # Contrôles de la raquette du joueur 2</div>
+                    if keys[pygame.K_UP] and player2_paddle.top > 0:
+                        player2_paddle.y -= PADDLE_SPEED
+                    if keys[pygame.K_DOWN] and player2_paddle.bottom < HEIGHT:
+                        player2_paddle.y += PADDLE_SPEED
+                    <div class="prog">
+                    # Mouvement de la balle</div>
+                    ball.x += ball_speed_x
+                    ball.y += ball_speed_y
+                    <div class="prog">
+                    # Rebond de la balle sur les bords verticaux</div>
+                    if ball.top <= 0 or ball.bottom >= HEIGHT:
+                        ball_speed_y = -ball_speed_y
+                    <div class="prog">
+                    # Rebond de la balle sur les raquettes</div>
+                    if ball.colliderect(player1_paddle) or ball.colliderect(player2_paddle):
+                        ball_speed_x = -ball_speed_x
+                    <div class="prog">
+                    # Si la balle sort à gauche ou à droite</div>
+                    if ball.left <= 0:
+                        player2_score += 1
+                        ball = pygame.Rect(WIDTH // 2 - BALL_SIZE // 2, HEIGHT // 2 - BALL_SIZE // 2, BALL_SIZE, BALL_SIZE)
+                        ball_speed_x = BALL_SPEED_X * random.choice((1, -1))
+                        ball_speed_y = BALL_SPEED_Y * random.choice((1, -1))
+                    elif ball.right >= WIDTH:
+                        player1_score += 1
+                        ball = pygame.Rect(WIDTH // 2 - BALL_SIZE // 2, HEIGHT // 2 - BALL_SIZE // 2, BALL_SIZE, BALL_SIZE)
+                        ball_speed_x = BALL_SPEED_X * random.choice((1, -1))
+                        ball_speed_y = BALL_SPEED_Y * random.choice((1, -1))
+          </pre>
+          <pre>     
+                    <div class="prog">
+                    # Effacer l'écran</div>
+                    screen.fill(BG_COLOR)
+                    <div class="prog">
+                    # Dessiner les raquettes, la balle et le score</div>
+                    draw_paddle(player1_paddle)
+                    draw_paddle(player2_paddle)
+                    draw_ball(ball)
+                    draw_score(player1_score, player2_score)
+                    <div class="prog">
+                    # Mettre à jour l'écran</div>
+                    pygame.display.flip()
+                    <div class="prog">
+                    # Limiter le nombre d'images par seconde</div>
+                    pygame.time.Clock().tick(60)
+            <div class="prog">
+            # Lancer le jeu</div>
+            if __name__ == "__main__":
+                pong_game()
+            </pre>
+            <footer> 
+        
+                <nav>
+                        
+                <select name="liensbas" onchange="window.location.href=this.value">
+                    <option value="" class="exemple-recherche">--que recherhcez-vous?--</option>
+                    <option value="index.html">accueil</option>
+                    <option value="a-propos-site-1.html">à propos de moi</option>
+                    <option value="mes-photos.html">mes photos</option>
+                    <option value="mes-dessins.html">mes dessins</option>
+                    <option value="programation-classique.html">programation</option>
+                </select>
+            </nav>
+        </footer>
+            </body>
+        </html>
